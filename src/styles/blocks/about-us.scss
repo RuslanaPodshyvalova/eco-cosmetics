@@ -1,0 +1,100 @@
+$top-indent: 30px;
+$vertical-block-width: 160px;
+
+.about-us {
+  position: relative;
+  padding-right: #{$page-side-padding};
+
+  &__vertical {
+    @include vertical-text;
+    top: #{$vertical-block-width};
+  }
+
+  &__vertical::before {
+    @include vertical-line;
+  }
+
+  &__description {
+    max-width: #{$text-content-width};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    padding: #{$top-indent} 0 #{$title-text-indent};
+  }
+
+  &__description > p {
+    padding-bottom: 30px;
+  }
+
+  &__description p:last-of-type {
+    padding-bottom: 0;
+  }
+
+  &__link {
+    margin-top: 20px;
+  }
+
+  &__btn {
+    margin-top: 50px;
+  }
+
+  &__img {
+    background-image: url("./../images/about-us-pic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  @media(max-width: 768px) {
+    & {
+      display: flex;
+      flex-direction: row;
+      padding-right: 0;
+      gap: 30px;
+    }
+
+    &__title {
+      padding: 0;
+    }
+
+    &__description {
+      width: 50%;
+    }
+
+    &__img {
+      width: 50%;
+    }
+
+    &__link {
+      margin-top: 0;
+    }
+
+    &__vertical,
+    &__additional {
+      display: none;
+    }
+  }
+
+  @media(max-width: 320px) {
+
+    &__description {
+      width: 100%;
+      text-align: left;
+
+      & > * {
+        margin: 0 20px;
+      }
+    }
+
+    &__img {
+      display: none;
+    }
+
+    &__btn {
+      margin-top: 44px;
+    }
+  }
+}

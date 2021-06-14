@@ -1,0 +1,38 @@
+.link {
+  position: relative;
+  width: 100px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #{$main-green};
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover::after {
+    position: absolute;
+    width: 100%;
+    content: "";
+    height: 1px;
+    bottom: -10px;
+    left: 0;
+    background: #{$main-green};
+    animation: animate 0.1s linear;
+  }
+
+  @keyframes animate {
+    0% {
+      width: 0;
+    }
+
+    50% {
+      width: 50%;
+    }
+
+    100% {
+      width: 100%;
+    }
+  }
+}

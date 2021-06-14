@@ -1,6 +1,35 @@
+$font-color: rgba(52, 79, 16, 0.5);
+$line-width: 90px;
+
 @mixin hover($_property, $_toValue) {
-  transition: #{$_property} 0.3s;
+  transition: #{$_property} 0.5s;
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+@mixin vertical-text {
+  position: absolute;
+  margin-left: -#{$vertical-size};
+  font-size: #{$vertical-size};
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  color: #{$font-color};
+  text-transform: uppercase;
+  transform-origin: 0 0;
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+@mixin vertical-line {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(-#{$line-width} - 10px);
+  width: #{$line-width};
+  height: 1px;
+  background: #{$font-color};
 }

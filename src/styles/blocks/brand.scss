@@ -1,0 +1,102 @@
+$vertical-block-width: 218px;
+
+.brand {
+  position: relative;
+
+  &__vertical {
+    @include vertical-text;
+    top: #{$vertical-block-width};
+  }
+
+  &__vertical::before {
+    @include vertical-line;
+  }
+  
+  &__description {
+    max-width: #{$text-content-width};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__title {
+    padding: 50px 0 #{$title-text-indent};
+  }
+
+  &__description > p:first-of-type {
+    padding-bottom: 40px;
+  }
+
+  &__link {
+    margin-top: 40px;
+  }
+
+  &__images {
+    display: flex;
+    column-gap: 20px;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    &--big {
+      width: 80%;
+      height: 100%;
+    }
+
+    &--small {
+      width: 20%;
+      height: 80%;
+    }
+
+    &--big,
+    &--small {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  @media(max-width: 768px) {
+    & {
+      display: flex;
+      flex-direction: row;
+      padding-right: 0;
+      gap: 30px;
+    }
+
+    &__title {
+      padding: 0;
+    }
+
+    &__description {
+      width: 50%;
+    }
+
+    &__images {
+      width: 50%;
+
+      &--big {
+        width: 100%;
+      }
+    }
+
+    &__link {
+      margin-top: 0;
+    }
+
+    &__images--small,
+    &__vertical,
+    &__title--2 {
+      display: none;
+    }
+  }
+
+  @media(max-width: 320px) {
+    &__description {
+      width: 100%;
+    }
+
+    &__images {
+      display: none;
+    }
+  }
+}

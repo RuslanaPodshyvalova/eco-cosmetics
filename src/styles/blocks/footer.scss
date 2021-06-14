@@ -1,0 +1,148 @@
+$footer-main-color: #e4dfd3;
+$height-copyright-block: 36px;
+$bottom-indent: 60px;
+
+.footer {
+  background: rgba(52, 79, 16, 0.5);
+  color: #{$footer-main-color};
+
+  &__wrapper {
+    max-width: #{$page-width};
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 60px #{$page-side-padding} 60px;
+  }
+
+  &__info {
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    grid-area: 1 / 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: calc(#{$container-left-padding} + #{$contacts-col_2-padding});
+    font-size: 18px;
+    line-height: 23px;
+
+    & > * {
+      color: #{$footer-main-color};
+      padding-bottom: 20px;
+    }
+  }
+
+  &__nav-page {
+    justify-content: flex-start;
+  }
+
+  &__nav-link {
+    position: relative;
+    color: #{$footer-main-color};
+  
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover:hover::after {
+      cursor: pointer;
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 2px;
+      left: 0;
+      bottom: -10px;
+      background: #{$footer-main-color};
+    }
+  }
+
+  &__copyright--short {
+    color: #{$footer-main-color};
+    text-transform: uppercase;
+  }
+
+  &__media--nav {
+    display: none;
+  }
+
+  &__media--contacts {
+    & img:first-of-type {
+      padding-right: 16px;
+    }
+  }
+
+  @media(max-width: 768px) {
+    &__contacts {
+      font-size: 14px;
+      line-height: 18px;
+      padding-left: 30px;
+
+      & > * {
+        padding-bottom: 12px;
+      }
+      
+      &--phone {
+        padding-bottom: 20px;
+      }
+    }
+
+    &__media--nav {
+      display: block;
+      padding-top: 20px;
+
+      & img:first-of-type {
+        padding-right: 20px;
+      }
+    }
+
+    &__media--contacts {
+      display: none;
+    }
+
+    &__copyright--full {
+      display: none;
+    }
+
+    &__copyright {
+      padding-top: 50px;
+    }
+
+    &__copyright--short {
+      text-transform: lowercase;
+    }
+  }
+
+  @media(max-width: 320px) {
+    &__wrapper {
+      position: relative;
+      padding: 30px 20px 126px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    &__contacts {
+      padding: 0;
+    }
+
+    &__media--nav {
+      padding-bottom: 30px;
+    }
+
+    &__copyright {
+      padding: 0;
+      position: absolute;
+      left: 50%;
+      bottom: calc(#{$bottom-indent} - #{$height-copyright-block});
+      transform: translate(-50%, -50%);
+      width: 200px;
+      font-size: 14px;
+      line-height: 18px;
+      text-align: center;
+    }
+  }
+}

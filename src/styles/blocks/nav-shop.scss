@@ -1,0 +1,37 @@
+.nav-shop {
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: #{$main-gray};
+    @include hover(bottom, -1px);
+    @include hover(color, #{$main-dark-gray});
+  }
+
+  &__link:hover {
+    cursor: pointer;
+  }
+
+  &__link:hover::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #{$main-dark-gray};
+    transform: translate(0, 20px);
+  }
+
+  @media(max-width: 768px) {
+    &__list {
+      padding: 12px 0 32px;
+    }
+  }
+}

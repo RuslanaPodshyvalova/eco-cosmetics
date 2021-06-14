@@ -1,0 +1,96 @@
+$vertical-block-width: 35px;
+
+.contacts {
+  position: relative;
+
+  &__vertical {
+    @include vertical-text;
+    top: #{$vertical-block-width};
+  }
+
+  &__vertical::before {
+    @include vertical-line;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 54px;
+    text-transform: capitalize;
+    padding-bottom: #{$title-text-indent};
+    color: #{$main-green};
+  }
+
+  &__info {
+    max-width: #{$text-content-width};
+    font-size: 24px;
+    line-height: 36px;
+    text-transform: lowercase;
+    padding-bottom: #{$title-text-indent};
+    color: #{$main-dark-gray};
+  }
+
+  &__form {
+    padding-right: 20px;
+    & > .btn {
+      margin-top: 50px;
+    }
+  }
+
+  &__img {
+    background-image: url("./../images/contacts-pic.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top 0 left #{$contacts-col_2-padding};
+  }
+
+  @media(max-width: 768px) {
+    & {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      padding-right: 0;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 36px;
+      text-transform: uppercase;
+    }
+
+    &__description {
+      width: 50%;
+    }
+
+    &__info {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__img {
+      width: 50%;
+      background-position: top 0 left 0;
+    }
+    
+    &__vertical {
+      display: none;
+    }
+  }
+
+  @media(max-width: 320px) {
+    &__form {
+      padding: 0;
+    }
+
+    & > * {
+      padding: 0 #{$small320-scr-side-padding};
+    }
+
+    &__description {
+      width: 100%;
+    }
+
+    &__img {
+      display: none;
+    }
+  }
+}

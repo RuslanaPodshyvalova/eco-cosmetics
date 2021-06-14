@@ -1,0 +1,46 @@
+.advantages {
+  padding: 0 #{$page-side-padding} 0;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000;
+
+  @for $i from 1 through 3 {
+    &__advantage--#{$i} {
+      display: flex;
+      width: 33%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  & img:first-of-type {
+    width: 100px;
+    height: 100px;
+    padding-bottom: 10px;
+    @include hover(transform, scale(1.25));
+  }
+
+  @media(max-width: 768px) {
+    & img:first-of-type {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media(max-width: 320px) {
+    & {
+      padding: 0 20px;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    & > * {
+      width: 100%;
+    }
+  }
+}

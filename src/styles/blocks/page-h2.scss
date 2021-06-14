@@ -1,0 +1,16 @@
+.page-h2 {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #{$main-green};
+
+  @media(max-width: 768px) {
+    & {
+      font-size: 24px;
+      line-height: 36px;
+      padding-bottom: 12px;
+    }
+  }
+}

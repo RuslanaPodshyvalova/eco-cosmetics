@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+  font-family: "Sharp Sans No2", Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #{$main-dark-gray};
+}
+
+body {
+  margin: 0;
+  background: #{$page-background};
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #{$main-gray};
+}
+
+a:visited {
+  font-weight: normal;
+  color: #{$main-dark-gray};
+}
+
+h2,
+p {
+  margin: 0;
+}
+
+h2 {
+  padding-bottom: 20px;
+}
+
+img {
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}

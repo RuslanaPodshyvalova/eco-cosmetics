@@ -1,0 +1,15 @@
+.main {
+  padding-left: #{$page-side-padding};
+
+  @media(max-width: 768px) {
+    & {
+      padding-left: 27px;
+    }
+  }
+
+  @media(max-width: 320px) {
+    & {
+      padding-left: 0;
+    }
+  }
+}
